@@ -1,0 +1,217 @@
+\begin{theindex}
+\def\bigletter#1{{\Large\sffamily#1}\nopagebreak\vspace{1mm}}
+
+  \bigletter {Symbols}
+  \item \_\_abs\_\_() (datatypes.integers.Int8.Int8 method), \hyperpage{7}
+  \item \_\_abs\_\_() (datatypes.integers.UInt.UInt method), \hyperpage{10}
+  \item \_\_abs\_\_() (datatypes.integers.UInt8.UInt8 method), \hyperpage{11}
+  \item \_\_add\_\_() (datatypes.bits.Bit.Bit method), \hyperpage{4}
+  \item \_\_add\_\_() (datatypes.integers.Int8.Int8 method), \hyperpage{7}
+  \item \_\_add\_\_() (datatypes.integers.UInt.UInt method), \hyperpage{10}
+  \item \_\_add\_\_() (datatypes.integers.UInt8.UInt8 method), \hyperpage{11}
+  \item \_\_and\_\_() (datatypes.bits.Bit.Bit method), \hyperpage{4}
+  \item \_\_and\_\_() (datatypes.integers.Int8.Int8 method), \hyperpage{7}
+  \item \_\_and\_\_() (datatypes.integers.UInt8.UInt8 method), \hyperpage{11}
+  \item \_\_div\_\_() (datatypes.integers.Int8.Int8 method), \hyperpage{8}
+  \item \_\_div\_\_() (datatypes.integers.UInt8.UInt8 method), \hyperpage{12}
+  \item \_\_eq\_\_() (datatypes.bits.Bit.CryptoBit method), \hyperpage{5}
+  \item \_\_eq\_\_() (datatypes.bits.Bit.PlainBit method), \hyperpage{6}
+  \item \_\_eq\_\_() (datatypes.integers.Int8.Int8 method), \hyperpage{8}
+  \item \_\_eq\_\_() (datatypes.integers.UInt.UInt method), \hyperpage{10}
+  \item \_\_eq\_\_() (datatypes.integers.UInt8.UInt8 method), \hyperpage{12}
+  \item \_\_ge\_\_() (datatypes.integers.Int8.Int8 method), \hyperpage{8}
+  \item \_\_ge\_\_() (datatypes.integers.UInt8.UInt8 method), \hyperpage{12}
+  \item \_\_gt\_\_() (datatypes.integers.Int8.Int8 method), \hyperpage{8}
+  \item \_\_gt\_\_() (datatypes.integers.UInt8.UInt8 method), \hyperpage{12}
+  \item \_\_invert\_\_() (datatypes.bits.Bit.Bit method), \hyperpage{4}
+  \item \_\_invert\_\_() (datatypes.integers.Int8.Int8 method), \hyperpage{8}
+  \item \_\_invert\_\_() (datatypes.integers.UInt8.UInt8 method), \hyperpage{12}
+  \item \_\_le\_\_() (datatypes.integers.Int8.Int8 method), \hyperpage{8}
+  \item \_\_le\_\_() (datatypes.integers.UInt8.UInt8 method), \hyperpage{12}
+  \item \_\_len\_\_() (datatypes.integers.Int8.Int8 method), \hyperpage{8}
+  \item \_\_len\_\_() (datatypes.integers.UInt.UInt method), \hyperpage{11}
+  \item \_\_len\_\_() (datatypes.integers.UInt8.UInt8 method), \hyperpage{12}
+  \item \_\_lshift\_\_() (datatypes.integers.Int8.Int8 method), \hyperpage{8}
+  \item \_\_lshift\_\_() (datatypes.integers.UInt8.UInt8 method), \hyperpage{12}
+  \item \_\_lt\_\_() (datatypes.integers.Int8.Int8 method), \hyperpage{9}
+  \item \_\_lt\_\_() (datatypes.integers.UInt8.UInt8 method), \hyperpage{13}
+  \item \_\_mod\_\_() (datatypes.integers.Int8.Int8 method), \hyperpage{9}
+  \item \_\_mod\_\_() (datatypes.integers.UInt8.UInt8 method), \hyperpage{13}
+  \item \_\_mul\_\_() (datatypes.bits.Bit.Bit method), \hyperpage{4}
+  \item \_\_mul\_\_() (datatypes.integers.UInt8.UInt8 method), \hyperpage{13}
+  \item \_\_neg\_\_() (datatypes.bits.Bit.Bit method), \hyperpage{4}
+  \item \_\_neg\_\_() (datatypes.integers.Int8.Int8 method), \hyperpage{9}
+  \item \_\_neg\_\_() (datatypes.integers.UInt8.UInt8 method), \hyperpage{13}
+  \item \_\_or\_\_() (datatypes.bits.Bit.Bit method), \hyperpage{4}
+  \item \_\_or\_\_() (datatypes.integers.Int8.Int8 method), \hyperpage{9}
+  \item \_\_or\_\_() (datatypes.integers.UInt8.UInt8 method), \hyperpage{13}
+  \item \_\_repr\_\_() (datatypes.bits.Bit.CryptoBit method), \hyperpage{5}
+  \item \_\_repr\_\_() (datatypes.bits.Bit.PlainBit method), \hyperpage{6}
+  \item \_\_repr\_\_() (datatypes.integers.Int8.Int8 method), \hyperpage{9}
+  \item \_\_repr\_\_() (datatypes.integers.UInt8.UInt8 method), \hyperpage{13}
+  \item \_\_rshift\_\_() (datatypes.integers.Int8.Int8 method), \hyperpage{9}
+  \item \_\_rshift\_\_() (datatypes.integers.UInt8.UInt8 method), \hyperpage{13}
+  \item \_\_sub\_\_() (datatypes.integers.Int8.Int8 method), \hyperpage{9}
+  \item \_\_sub\_\_() (datatypes.integers.UInt.UInt method), \hyperpage{11}
+  \item \_\_sub\_\_() (datatypes.integers.UInt8.UInt8 method), \hyperpage{14}
+  \item \_\_xor\_\_() (datatypes.bits.Bit.Bit method), \hyperpage{4}
+  \item \_\_xor\_\_() (datatypes.integers.Int8.Int8 method), \hyperpage{10}
+  \item \_\_xor\_\_() (datatypes.integers.UInt8.UInt8 method), \hyperpage{14}
+
+  \indexspace
+  \bigletter A
+  \item AND() (datatypes.bits.Bit.Bit method), \hyperpage{3}
+  \item AND() (datatypes.bits.Bit.CryptoBit method), \hyperpage{4}
+  \item AND() (datatypes.bits.Bit.PlainBit method), \hyperpage{6}
+
+  \indexspace
+  \bigletter B
+  \item BadRightOperand, \hyperpage{7}
+  \item Bit (class in datatypes.bits.Bit), \hyperpage{3}
+  \item BitwiseOperationError, \hyperpage{3}
+
+  \indexspace
+  \bigletter C
+  \item completeAddOnOneBit() (in module datatypes.integers.Utility), \hyperpage{14}
+  \item completeSubOnOneBit() (in module datatypes.integers.Utility), \hyperpage{15}
+  \item CryptoBit (class in datatypes.bits.Bit), \hyperpage{4}
+
+  \indexspace
+  \bigletter D
+  \item datatypes.bits.Bit (module), \hyperpage{3}
+  \item datatypes.bits.errors.BitwiseOperationError (module), \hyperpage{3}
+  \item datatypes.bits.errors.InstantiationError (module), \hyperpage{3}
+  \item datatypes.bits.errors.OpNotAllowedError (module), \hyperpage{3}
+  \item datatypes.integers.error.BadRightOperand (module), \hyperpage{7}
+  \item datatypes.integers.error.OverflowError (module), \hyperpage{7}
+  \item datatypes.integers.Int8 (module), \hyperpage{7}
+  \item datatypes.integers.UInt (module), \hyperpage{10}
+  \item datatypes.integers.UInt8 (module), \hyperpage{11}
+  \item datatypes.integers.Utility (module), \hyperpage{14}
+  \item debug\_\_printAsBoolean() (datatypes.bits.Bit.Bit method), \hyperpage{4}
+  \item debug\_\_printAsBoolean() (datatypes.bits.Bit.CryptoBit method), \hyperpage{5}
+  \item debug\_\_printAsBoolean() (datatypes.bits.Bit.PlainBit method), \hyperpage{6}
+  \item debug\_showValue() (datatypes.integers.Int8.Int8 method), \hyperpage{10}
+  \item debug\_showValue() (datatypes.integers.UInt.UInt method), \hyperpage{11}
+  \item debug\_showValue() (datatypes.integers.UInt8.UInt8 method), \hyperpage{14}
+  \item decode() (in module demo.ImageUtils), \hyperpage{15}
+  \item decrypt() (datatypes.bits.Bit.CryptoBit method), \hyperpage{5}
+  \item decrypt() (datatypes.integers.Int8.Int8 method), \hyperpage{10}
+  \item decrypt() (datatypes.integers.UInt8.UInt8 method), \hyperpage{14}
+  \item decrypt() (in module demo.ImageUtils), \hyperpage{15}
+  \item demo.ImageUtils (module), \hyperpage{15}
+  \item dump() (in module demo.ImageUtils), \hyperpage{15}
+
+  \indexspace
+  \bigletter E
+  \item encode() (in module demo.ImageUtils), \hyperpage{15}
+  \item encrypt() (datatypes.bits.Bit.PlainBit method), \hyperpage{7}
+  \item encrypt() (datatypes.integers.Int8.Int8 method), \hyperpage{10}
+  \item encrypt() (datatypes.integers.UInt8.UInt8 method), \hyperpage{14}
+  \item encrypt() (in module demo.ImageUtils), \hyperpage{16}
+
+  \indexspace
+  \bigletter I
+  \item InstantiationError, \hyperpage{3}
+  \item Int8 (class in datatypes.integers.Int8), \hyperpage{7}
+
+  \indexspace
+  \bigletter L
+  \item load() (in module demo.ImageUtils), \hyperpage{16}
+
+  \indexspace
+  \bigletter M
+  \item main (module), \hyperpage{16}
+
+  \indexspace
+  \bigletter N
+  \item negate() (in module demo.ImageUtils), \hyperpage{16}
+  \item NOT() (datatypes.bits.Bit.Bit method), \hyperpage{3}
+  \item NOT() (datatypes.bits.Bit.CryptoBit method), \hyperpage{5}
+  \item NOT() (datatypes.bits.Bit.PlainBit method), \hyperpage{6}
+
+  \indexspace
+  \bigletter O
+  \item OpNotAllowedError, \hyperpage{3}
+  \item OR() (datatypes.bits.Bit.Bit method), \hyperpage{4}
+  \item OR() (datatypes.bits.Bit.CryptoBit method), \hyperpage{5}
+  \item OR() (datatypes.bits.Bit.PlainBit method), \hyperpage{6}
+  \item OverflowError, \hyperpage{7}
+
+  \indexspace
+  \bigletter P
+  \item PlainBit (class in datatypes.bits.Bit), \hyperpage{5}
+
+  \indexspace
+  \bigletter R
+  \item refresh() (datatypes.bits.Bit.CryptoBit method), \hyperpage{5}
+  \item result (in module main), \hyperpage{16}
+
+  \indexspace
+  \bigletter S
+  \item setNoise() (datatypes.bits.Bit.CryptoBit method), \hyperpage{5}
+  \item setUp() (testing.TestInt8Methods.TestInt8Methods method), \hyperpage{17}
+  \item setUp() (testing.TestUInt8Methods.TestUInt8Methods method), \hyperpage{17}
+  \item setUp() (testing.TestUIntMethods.TestUIntMethods method), \hyperpage{18}
+  \item showValue() (datatypes.integers.UInt8.UInt8 method), \hyperpage{14}
+
+  \indexspace
+  \bigletter T
+  \item test\_and() (testing.TestBitsMethods.TestBitsMethods method), \hyperpage{16}
+  \item test\_int8\_abs() (testing.TestInt8Methods.TestInt8Methods method), \hyperpage{17}
+  \item test\_int8\_addition() (testing.TestInt8Methods.TestInt8Methods method), \hyperpage{17}
+  \item test\_int8\_debugshowValue() (testing.TestInt8Methods.TestInt8Methods method), 
+		\hyperpage{17}
+  \item test\_int8\_division() (testing.TestInt8Methods.TestInt8Methods method), \hyperpage{17}
+  \item test\_int8\_eq\_ne() (testing.TestInt8Methods.TestInt8Methods method), \hyperpage{17}
+  \item test\_int8\_ge() (testing.TestInt8Methods.TestInt8Methods method), \hyperpage{17}
+  \item test\_int8\_gt() (testing.TestInt8Methods.TestInt8Methods method), \hyperpage{17}
+  \item test\_int8\_le() (testing.TestInt8Methods.TestInt8Methods method), \hyperpage{17}
+  \item test\_int8\_lshift() (testing.TestInt8Methods.TestInt8Methods method), \hyperpage{17}
+  \item test\_int8\_lt() (testing.TestInt8Methods.TestInt8Methods method), \hyperpage{17}
+  \item test\_int8\_mod() (testing.TestInt8Methods.TestInt8Methods method), \hyperpage{17}
+  \item test\_int8\_rshift() (testing.TestInt8Methods.TestInt8Methods method), \hyperpage{17}
+  \item test\_int8\_subtraction() (testing.TestInt8Methods.TestInt8Methods method), \hyperpage{17}
+  \item test\_or() (testing.TestBitsMethods.TestBitsMethods method), \hyperpage{16}
+  \item test\_uint8\_addition() (testing.TestUInt8Methods.TestUInt8Methods method), \hyperpage{17}
+  \item test\_uint8\_debugshowValue() (testing.TestUInt8Methods.TestUInt8Methods method), 
+		\hyperpage{17}
+  \item test\_uint8\_division() (testing.TestUInt8Methods.TestUInt8Methods method), \hyperpage{17}
+  \item test\_uint8\_eq\_ne() (testing.TestUInt8Methods.TestUInt8Methods method), \hyperpage{17}
+  \item test\_uint8\_ge() (testing.TestUInt8Methods.TestUInt8Methods method), \hyperpage{17}
+  \item test\_uint8\_gt() (testing.TestUInt8Methods.TestUInt8Methods method), \hyperpage{17}
+  \item test\_uint8\_le() (testing.TestUInt8Methods.TestUInt8Methods method), \hyperpage{17}
+  \item test\_uint8\_lshift() (testing.TestUInt8Methods.TestUInt8Methods method), \hyperpage{17}
+  \item test\_uint8\_lt() (testing.TestUInt8Methods.TestUInt8Methods method), \hyperpage{17}
+  \item test\_uint8\_mod() (testing.TestUInt8Methods.TestUInt8Methods method), \hyperpage{17}
+  \item test\_uint8\_rshift() (testing.TestUInt8Methods.TestUInt8Methods method), \hyperpage{18}
+  \item test\_uint8\_subtraction() (testing.TestUInt8Methods.TestUInt8Methods method), 
+		\hyperpage{18}
+  \item test\_uint\_addition() (testing.TestUIntMethods.TestUIntMethods method), \hyperpage{18}
+  \item test\_uint\_debugshowValue() (testing.TestUIntMethods.TestUIntMethods method), 
+		\hyperpage{18}
+  \item test\_uint\_subtraction() (testing.TestUIntMethods.TestUIntMethods method), \hyperpage{18}
+  \item test\_xor() (testing.TestBitsMethods.TestBitsMethods method), \hyperpage{16}
+  \item TestBitsMethods (class in testing.TestBitsMethods), \hyperpage{16}
+  \item testing.TestBitsMethods (module), \hyperpage{16}
+  \item testing.TestInt8Methods (module), \hyperpage{17}
+  \item testing.TestUInt8Methods (module), \hyperpage{17}
+  \item testing.TestUIntMethods (module), \hyperpage{18}
+  \item TestInt8Methods (class in testing.TestInt8Methods), \hyperpage{17}
+  \item TestUInt8Methods (class in testing.TestUInt8Methods), \hyperpage{17}
+  \item TestUIntMethods (class in testing.TestUIntMethods), \hyperpage{18}
+  \item toInt8() (datatypes.integers.UInt8.UInt8 method), \hyperpage{14}
+  \item toUInt8() (datatypes.integers.Int8.Int8 method), \hyperpage{10}
+
+  \indexspace
+  \bigletter U
+  \item UInt (class in datatypes.integers.UInt), \hyperpage{10}
+  \item UInt8 (class in datatypes.integers.UInt8), \hyperpage{11}
+
+  \indexspace
+  \bigletter X
+  \item XOR() (datatypes.bits.Bit.Bit method), \hyperpage{4}
+  \item XOR() (datatypes.bits.Bit.CryptoBit method), \hyperpage{5}
+  \item XOR() (datatypes.bits.Bit.PlainBit method), \hyperpage{6}
+
+\end{theindex}

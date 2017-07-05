@@ -1,0 +1,1180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>datatypes.integers package &mdash; Homomorphic Processor 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Homomorphic Processor 0.1 documentation" href="index.html" />
+    <link rel="up" title="datatypes package" href="datatypes.html" />
+    <link rel="next" title="datatypes.integers.error package" href="datatypes.integers.error.html" />
+    <link rel="prev" title="datatypes.bits.errors package" href="datatypes.bits.errors.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="datatypes-integers-package">
+<h1>datatypes.integers package<a class="headerlink" href="#datatypes-integers-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="datatypes.integers.error.html">datatypes.integers.error package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datatypes.integers.error.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datatypes.integers.error.html#module-datatypes.integers.error.BadRightOperand">datatypes.integers.error.BadRightOperand module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datatypes.integers.error.html#module-datatypes.integers.error.OverflowError">datatypes.integers.error.OverflowError module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-datatypes.integers.Int8">
+<span id="datatypes-integers-int8-module"></span><h2>datatypes.integers.Int8 module<a class="headerlink" href="#module-datatypes.integers.Int8" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="datatypes.integers.Int8.Int8">
+<em class="property">class </em><code class="descclassname">datatypes.integers.Int8.</code><code class="descname">Int8</code><span class="sig-paren">(</span><em>value=0</em>, <em>bits=None</em>, <em>randomize=False</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signed integer made from an array of 8 Bits. (from -128 to 127)
+the representation is in two&#8217;s complement
+We chose a convention for our arrays of bits :
+when we initiate a byte, the first bit of the array is the Most Significant Bit.
+The last one is the Least Significant Bit.
+Thus, bits[0] = MSB, bits[bits.length()] = LSB</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><strong>InstantiationError</strong> &#8211; if the array is too long/short</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.__abs__">
+<code class="descname">__abs__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.__abs__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the absolute value. Since our integers are coded in two&#8217;s complement, absolute value of -128 cannot be represented. However if self equals -128 the result will have its testOverflow bit set to
+indicate that an overflowError has occurred.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the absolute value, except for -128 for which it returns 0.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8">Int8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.__add__">
+<code class="descname">__add__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.__add__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will add 2 Int8.
+We override this operator to be able to write operations more easily</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8"><em>Int8</em></a>) &#8211; Right Operand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the sum of the two Int8</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8">Int8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.__and__">
+<code class="descname">__and__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.__and__" title="Permalink to this definition">¶</a></dt>
+<dd><p>bitwise AND operation, returns an Int8
+We override this operator to be able to write operations more easily</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8"><em>Int8</em></a>) &#8211; Right Operand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">bitwise AND operation, returns an Int8</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8">Int8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.__div__">
+<code class="descname">__div__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.__div__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will divide 2 Int8.
+We override this operator to be able to write operations more easily
+DIVISION IS ROUNDED TOWARDS 0 since it uses the division from the absolutes value of the arguments given.
+This means that there might be an isssue when using -128 as an operand, cf __abs__ function</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8"><em>Int8</em></a>) &#8211; Right Operand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the result of division of the two Int8</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8">Int8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.__eq__">
+<code class="descname">__eq__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.__eq__" title="Permalink to this definition">¶</a></dt>
+<dd><p>test if two Int8 are equal</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8"><em>Int8</em></a>) &#8211; Int8 to compare</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True or False, in form of a CryptoBit or a PlainBit</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CryptoBit or PlainBit</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.__ge__">
+<code class="descname">__ge__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.__ge__" title="Permalink to this definition">¶</a></dt>
+<dd><p>test if an Int8 is greater or equal than/to another one</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8"><em>Int8</em></a>) &#8211; Int8 to compare</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CryptoBit or PlainBit (true or false)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CryptoBit or PlainBit</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.__gt__">
+<code class="descname">__gt__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.__gt__" title="Permalink to this definition">¶</a></dt>
+<dd><p>test if an Int8 is greater than another one</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8"><em>Int8</em></a>) &#8211; Int8 to compare</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CryptoBit or PlainBit (true or false)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CryptoBit or PlainBit</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.__invert__">
+<code class="descname">__invert__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.__invert__" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the one&#8217;s complement Int8
+We override this operator to be able to write operations more easily</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the one&#8217;s complement Int8</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8">Int8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.__le__">
+<code class="descname">__le__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.__le__" title="Permalink to this definition">¶</a></dt>
+<dd><p>test if an Int8 is lesser or equal than/to another one</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8"><em>Int8</em></a>) &#8211; Int8 to compare</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CryptoBit or PlainBit (true or false)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CryptoBit or PlainBit</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.__len__">
+<code class="descname">__len__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.__len__" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the length of the array of bits of an Int8 (which is always 8)
+We override this operator to be able to write operations more easily</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">an integer, the size of the array of bits of Int8 (which is 8)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.__lshift__">
+<code class="descname">__lshift__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.__lshift__" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns an Int8 that its bits were shifted to the left
+We override this operator to be able to write operations more easily
+Note that this operation performs an arithmetic shift and not a binary shift
+This means that the sign bit is ignored by the operation, and it will not be shifted as a consequence</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<em>integer</em>) &#8211; integer to know how much we shift</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">an Int8, its bits were shifted to the left</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8">Int8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.__lt__">
+<code class="descname">__lt__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.__lt__" title="Permalink to this definition">¶</a></dt>
+<dd><p>test if an Int8 is lesser than another one</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8"><em>Int8</em></a>) &#8211; Int8 to compare</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CryptoBit or PlainBit (true or false)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CryptoBit or PlainBit</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.__mod__">
+<code class="descname">__mod__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.__mod__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will return the remainder of the division between 2 Int8.
+We override this operator to be able to write operations more easily
+As a convention the result will be positive and will be the rest from the euclidian division of the absolute values of the two arguments</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8"><em>Int8</em></a>) &#8211; Right Operand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the remainder of the division between two Int8</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8">Int8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.__neg__">
+<code class="descname">__neg__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.__neg__" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the opposite Int8
+We override this operator to be able to write operations more easily</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">opposite Int8, except for -128</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8">Int8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.__or__">
+<code class="descname">__or__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.__or__" title="Permalink to this definition">¶</a></dt>
+<dd><p>bitwise OR operation, returns an Int8
+We override this operator to be able to write operations more easily</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8"><em>Int8</em></a>) &#8211; Right Operand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">bitwise OR operation, returns an Int8</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8">Int8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.__repr__">
+<code class="descname">__repr__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.__repr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return representation of Int8</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">integer, the value of the Int8</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.__rshift__">
+<code class="descname">__rshift__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.__rshift__" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns an Int8 that its bits were shifted to the right
+We override this operator to be able to write operations more easily
+Note that this operation performs an arithmetic shift and not a binary shift
+This means that the sign bit is ignored by the operation, and it will not be shifted as a consequence</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<em>integer</em>) &#8211; integer to know how much we shift</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">an Int8, its bits were shifted to the right</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8">Int8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.__sub__">
+<code class="descname">__sub__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.__sub__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will substract 2 Int8.
+We override this operator to be able to write operations more easily</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8"><em>Int8</em></a>) &#8211; Right Operand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the difference of the two Int8</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8">Int8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.__xor__">
+<code class="descname">__xor__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.__xor__" title="Permalink to this definition">¶</a></dt>
+<dd><p>bitwise XOR operation, returns an Int8
+We override this operator to be able to write operations more easily</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8"><em>Int8</em></a>) &#8211; Right Operand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">bitwise XOR operation, returns an Int8</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8">Int8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.debug_showValue">
+<code class="descname">debug_showValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.debug_showValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is for debug purposes only, it will reveal the integer value of the Int8</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">an integer, the value of the Int8</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.decrypt">
+<code class="descname">decrypt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.decrypt" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method makes every CryptoBit into PlainBit</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.encrypt">
+<code class="descname">encrypt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.encrypt" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method makes every PlainBit into CryptoBit</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.Int8.Int8.toUInt8">
+<code class="descname">toUInt8</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Int8.Int8.toUInt8" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the abs value of integer as Unisgned Integer (UInt8)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">abs value of integer as UInt8</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8">UInt8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-datatypes.integers.UInt">
+<span id="datatypes-integers-uint-module"></span><h2>datatypes.integers.UInt module<a class="headerlink" href="#module-datatypes.integers.UInt" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="datatypes.integers.UInt.UInt">
+<em class="property">class </em><code class="descclassname">datatypes.integers.UInt.</code><code class="descname">UInt</code><span class="sig-paren">(</span><em>value=0</em>, <em>ints=None</em>, <em>fixedSize=None</em>, <em>randomize=False</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt.UInt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsigned integer made from an array of UInt8s.
+We chose a convention for our arrays of bits :
+when we initiate a byte, the first bit of the array is the Most Significant Bit.
+The last one is the Least Significant Bit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><strong>InstantiationError</strong> &#8211; if the array is too long/short</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="datatypes.integers.UInt.UInt.__abs__">
+<code class="descname">__abs__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt.UInt.__abs__" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the absolute value which is itself</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the absolute value (itself)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.UInt.UInt" title="datatypes.integers.UInt.UInt">UInt</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt.UInt.__add__">
+<code class="descname">__add__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt.UInt.__add__" title="Permalink to this definition">¶</a></dt>
+<dd><p>We wanted to append another 8-bit word if an overflow was detected, however we realized it could weaken the encryption.
+Therefore, we decided to return both the incorrect result and the carryOut bit to be properly handled by the user once decrypted.
+There may be some error in this function. When we add two UInt of different sizes, or when we add an UInt of value zero.</p>
+<p>/!Be aware of this potential error</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> &#8211; UInt</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The sum of two UInts</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.UInt.UInt" title="datatypes.integers.UInt.UInt">UInt</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt.UInt.__eq__">
+<code class="descname">__eq__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt.UInt.__eq__" title="Permalink to this definition">¶</a></dt>
+<dd><p>test if two UInts are equal</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.UInt.UInt" title="datatypes.integers.UInt.UInt"><em>UInt</em></a>) &#8211; UInt to compare</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True or False, in form of a CryptoBit or a PlainBit</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CryptoBit or PlainBit</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">BadRightOperand</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt.UInt.__len__">
+<code class="descname">__len__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt.UInt.__len__" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the length of the array of UInt8s
+We override this operator to be able to write operations more easily</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">an integer, the size of the array of UInt8s</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt.UInt.__sub__">
+<code class="descname">__sub__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt.UInt.__sub__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will subtract 2 UInt.
+We override this operator to be able to write operations more easily</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.UInt.UInt" title="datatypes.integers.UInt.UInt"><em>UInt</em></a>) &#8211; Right Operand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the difference of the two UInt</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.UInt.UInt" title="datatypes.integers.UInt.UInt">UInt</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt.UInt.debug_showValue">
+<code class="descname">debug_showValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt.UInt.debug_showValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is for debug purposes only, it will reveal the integer value of the UInt</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">an integer, the value of the UInt</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-datatypes.integers.UInt8">
+<span id="datatypes-integers-uint8-module"></span><h2>datatypes.integers.UInt8 module<a class="headerlink" href="#module-datatypes.integers.UInt8" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="datatypes.integers.UInt8.UInt8">
+<em class="property">class </em><code class="descclassname">datatypes.integers.UInt8.</code><code class="descname">UInt8</code><span class="sig-paren">(</span><em>value=0</em>, <em>bits=None</em>, <em>randomize=False</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsigned integer made from an array of 8 Bits. (from 0 to 255)
+We chose a convention for our arrays of bits :
+when we initiate a byte, the first bit of the array is the Most Significant Bit.
+The last one is the Least Significant Bit.
+Thus, bits[0] = MSB, bits[bits.length()] = LSB
+Please note that this class can also be used to represent characters for example.
+Since we cannot access the data, its meaning is irrelevant to us, therefore UInt8 might as well be considered as Char</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><strong>InstantiationError</strong> &#8211; if the array is too long/short</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.__abs__">
+<code class="descname">__abs__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.__abs__" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the absolute value which is itself</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the absolute value (itself)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8">UInt8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.__add__">
+<code class="descname">__add__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.__add__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will add 2 UInt8.
+We override this operator to be able to write operations more easily</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8"><em>UInt8</em></a>) &#8211; Right Operand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the sum of the two UInt8</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8">UInt8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.__and__">
+<code class="descname">__and__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.__and__" title="Permalink to this definition">¶</a></dt>
+<dd><p>bitwise AND operation, returns an UInt8
+We override this operator to be able to write operations more easily</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8"><em>UInt8</em></a>) &#8211; Right Operand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">bitwise AND operation, returns an UInt8</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8">UInt8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.__div__">
+<code class="descname">__div__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.__div__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will divide 2 UInt8.
+We override this operator to be able to write operations more easily
+Note that by convention, the result will always be rounded towards 0</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8"><em>UInt8</em></a>) &#8211; Right Operand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the result of division of the two UInt8</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8">UInt8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.__eq__">
+<code class="descname">__eq__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.__eq__" title="Permalink to this definition">¶</a></dt>
+<dd><p>test if two UInt8 are equal</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8"><em>UInt8</em></a>) &#8211; UInt8 to compare</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True or False, in form of a CryptoBit or a PlainBit</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CryptoBit or PlainBit</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.__ge__">
+<code class="descname">__ge__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.__ge__" title="Permalink to this definition">¶</a></dt>
+<dd><p>test if an UInt8 is greater or equal than/to another one</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8"><em>UInt8</em></a>) &#8211; UInt8 to compare</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CryptoBit or PlainBit (true or false)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CryptoBit or PlainBit</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.__gt__">
+<code class="descname">__gt__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.__gt__" title="Permalink to this definition">¶</a></dt>
+<dd><p>test if an UInt8 is greater than another one</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8"><em>UInt8</em></a>) &#8211; UInt8 to compare</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CryptoBit or PlainBit (true or false)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CryptoBit or PlainBit</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.__invert__">
+<code class="descname">__invert__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.__invert__" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the one&#8217;s complement UInt8
+We override this operator to be able to write operations more easily</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the one&#8217;s complement UInt8</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8">UInt8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.__le__">
+<code class="descname">__le__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.__le__" title="Permalink to this definition">¶</a></dt>
+<dd><p>test if an UInt8 is lesser or equal than/to another one</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8"><em>UInt8</em></a>) &#8211; UInt8 to compare</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CryptoBit or PlainBit (true or false)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CryptoBit or PlainBit</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.__len__">
+<code class="descname">__len__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.__len__" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the length of the array of bits of an UInt8 (which is always 8)
+We override this operator to be able to write operations more easily</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">an integer, the size of the array of bits of UInt8 (which is 8)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.__lshift__">
+<code class="descname">__lshift__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.__lshift__" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns an UInt8 that its bits were shifted to the left
+We override this operator to be able to write operations more easily
+Note that this operation performs an arithmetic shift and not a binary shift</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<em>integer</em>) &#8211; integer to know how much we shift</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">an UInt8, its bits were shifted to the left</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8">UInt8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.__lt__">
+<code class="descname">__lt__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.__lt__" title="Permalink to this definition">¶</a></dt>
+<dd><p>test if an UInt8 is lesser than another one</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8"><em>UInt8</em></a>) &#8211; UInt8 to compare</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CryptoBit or PlainBit (true or false)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CryptoBit or PlainBit</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.__mod__">
+<code class="descname">__mod__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.__mod__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will return the remainder of the division between 2 UInt8.
+We override this operator to be able to write operations more easily
+Note that by convention : The result will always be positive</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8"><em>UInt8</em></a>) &#8211; Right Operand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the remainder of the division between two UInt8</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8">UInt8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.__mul__">
+<code class="descname">__mul__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.__mul__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will multiply 2 UInt8.
+We override this operator to be able to write operations more easily
+The multiplication seems to work fine, however there may be a problem in the addition of two UInt
+Since the addition od two UInt is used in this method there may be some error
+see addition of UInts of different sizes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8"><em>UInt8</em></a>) &#8211; Right Operand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the product of the two UInt8 which is an UInt</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.UInt.UInt" title="datatypes.integers.UInt.UInt">UInt</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.__neg__">
+<code class="descname">__neg__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.__neg__" title="Permalink to this definition">¶</a></dt>
+<dd><p>raise RuntimeError</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">RuntimeErro</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.__or__">
+<code class="descname">__or__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.__or__" title="Permalink to this definition">¶</a></dt>
+<dd><p>bitwise OR operation, returns an UInt8
+We override this operator to be able to write operations more easily</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8"><em>UInt8</em></a>) &#8211; Right Operand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">bitwise OR operation, returns an UInt8</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8">UInt8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.__repr__">
+<code class="descname">__repr__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.__repr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return representation of UInt8</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">integer, the value of the UInt8</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.__rshift__">
+<code class="descname">__rshift__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.__rshift__" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns an UInt8 that its bits were shifted to the right
+We override this operator to be able to write operations more easily
+Note that this operation performs an arithmetic shift and not a binary shift, this means
+that the new bit inserted will be equal to the MSB</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<em>integer</em>) &#8211; integer to know how much we shift</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">an UInt8, its bits were shifted to the right</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8">UInt8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.__sub__">
+<code class="descname">__sub__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.__sub__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will subtract 2 UInt8.
+We override this operator to be able to write operations more easily</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8"><em>UInt8</em></a>) &#8211; Right Operand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the difference of the two UInt8</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8">UInt8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.__xor__">
+<code class="descname">__xor__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.__xor__" title="Permalink to this definition">¶</a></dt>
+<dd><p>bitwise XOR operation, returns an UInt8
+We override this operator to be able to write operations more easily</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8"><em>UInt8</em></a>) &#8211; Right Operand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">bitwise XOR operation, returns an UInt8</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.UInt8.UInt8" title="datatypes.integers.UInt8.UInt8">UInt8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.debug_showValue">
+<code class="descname">debug_showValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.debug_showValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is for debug purposes only, it will reveal the integer value of the UInt8</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">an integer, the value of the UInt8</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.decrypt">
+<code class="descname">decrypt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.decrypt" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method makes every CryptoBit into PlainBit</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.encrypt">
+<code class="descname">encrypt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.encrypt" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method makes every PlainBit into CryptoBit</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.showValue">
+<code class="descname">showValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.showValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will show the &#8216;fake&#8217; value. It will read the value of the CryptoBit</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">an integer, the &#8216;fake&#8217; value of the UInt8</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.integers.UInt8.UInt8.toInt8">
+<code class="descname">toInt8</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.UInt8.UInt8.toInt8" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the value of integer as Signed Integer (Int8)
+overflow might occur, if this is the case, the variable testOverflow of the returned Integer will be set to true</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">value of integer as Int8</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.integers.Int8.Int8" title="datatypes.integers.Int8.Int8">Int8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-datatypes.integers.Utility">
+<span id="datatypes-integers-utility-module"></span><h2>datatypes.integers.Utility module<a class="headerlink" href="#module-datatypes.integers.Utility" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="datatypes.integers.Utility.completeAddOnOneBit">
+<code class="descclassname">datatypes.integers.Utility.</code><code class="descname">completeAddOnOneBit</code><span class="sig-paren">(</span><em>firstBit</em>, <em>secondBit</em>, <em>carry</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Utility.completeAddOnOneBit" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will add 2 Bits.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>firstBit</strong> (<em>Bit (CryptoBit or PlainBit)</em>) &#8211; Left Operand</li>
+<li><strong>secondBit</strong> (<em>Bit (CryptoBit or PlainBit)</em>) &#8211; Right Operand</li>
+<li><strong>carry</strong> (<em>Bit (CryptoBit or PlainBit)</em>) &#8211; The carry for the addition. A Bit (CryptoBit or PlainBit)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A bit : the result of XOR between the two Bits. And a Bit that is the carry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Bit, Bit</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="datatypes.integers.Utility.completeSubOnOneBit">
+<code class="descclassname">datatypes.integers.Utility.</code><code class="descname">completeSubOnOneBit</code><span class="sig-paren">(</span><em>minuend</em>, <em>subtrahend</em>, <em>borrowIn</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.integers.Utility.completeSubOnOneBit" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will subtract 2 Bits.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>minuend</strong> (<em>Bit (CryptoBit or PlainBit)</em>) &#8211; Left Operand</li>
+<li><strong>subtrahend</strong> (<em>Bit (CryptoBit or PlainBit)</em>) &#8211; Right Operand</li>
+<li><strong>borrowIn</strong> (<em>Bit (CryptoBit or PlainBit)</em>) &#8211; The borrowIn for the subtraction. A Bit (CryptoBit or PlainBit)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A bit : the result of XOR between the two Bits. And a Bit that is the BorrowIn</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Bit, Bit</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">datatypes.integers package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-datatypes.integers.Int8">datatypes.integers.Int8 module</a></li>
+<li><a class="reference internal" href="#module-datatypes.integers.UInt">datatypes.integers.UInt module</a></li>
+<li><a class="reference internal" href="#module-datatypes.integers.UInt8">datatypes.integers.UInt8 module</a></li>
+<li><a class="reference internal" href="#module-datatypes.integers.Utility">datatypes.integers.Utility module</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="datatypes.html">datatypes package</a><ul>
+      <li>Previous: <a href="datatypes.bits.errors.html" title="previous chapter">datatypes.bits.errors package</a></li>
+      <li>Next: <a href="datatypes.integers.error.html" title="next chapter">datatypes.integers.error package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/datatypes.integers.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Louis GERARD and Edouard SAMYN.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/datatypes.integers.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

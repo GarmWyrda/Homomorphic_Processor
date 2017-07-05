@@ -1,0 +1,582 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>datatypes.bits package &mdash; Homomorphic Processor 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Homomorphic Processor 0.1 documentation" href="index.html" />
+    <link rel="up" title="datatypes package" href="datatypes.html" />
+    <link rel="next" title="datatypes.bits.errors package" href="datatypes.bits.errors.html" />
+    <link rel="prev" title="datatypes package" href="datatypes.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="datatypes-bits-package">
+<h1>datatypes.bits package<a class="headerlink" href="#datatypes-bits-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="datatypes.bits.errors.html">datatypes.bits.errors package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datatypes.bits.errors.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datatypes.bits.errors.html#module-datatypes.bits.errors.BitwiseOperationError">datatypes.bits.errors.BitwiseOperationError module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datatypes.bits.errors.html#module-datatypes.bits.errors.InstantiationError">datatypes.bits.errors.InstantiationError module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datatypes.bits.errors.html#module-datatypes.bits.errors.OpNotAllowedError">datatypes.bits.errors.OpNotAllowedError module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-datatypes.bits.Bit">
+<span id="datatypes-bits-bit-module"></span><h2>datatypes.bits.Bit module<a class="headerlink" href="#module-datatypes.bits.Bit" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="datatypes.bits.Bit.Bit">
+<em class="property">class </em><code class="descclassname">datatypes.bits.Bit.</code><code class="descname">Bit</code><a class="headerlink" href="#datatypes.bits.Bit.Bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>General purpose bit, might be encrypted or not.
+This is an abstract class and therefore might not be instantiated</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><strong>InstantiationError</strong> &#8211; if called.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="datatypes.bits.Bit.Bit.AND">
+<code class="descname">AND</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.Bit.AND" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method should be overridden in subclasses to perform a logical AND operation between two bits.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><strong>OpNotAllowedError</strong> &#8211; if called</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.Bit.NOT">
+<code class="descname">NOT</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.Bit.NOT" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method should be overridden in subclasses to perform a logical NOT operation on self.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><strong>OpNotAllowedError</strong> &#8211; if called</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.Bit.OR">
+<code class="descname">OR</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.Bit.OR" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method should be overridden in subclasses to perform a logical OR operation between two bits.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><strong>OpNotAllowedError</strong> &#8211; if called</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.Bit.XOR">
+<code class="descname">XOR</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.Bit.XOR" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method should be overridden in subclasses to perform a logical XOR operation between two bits.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><strong>OpNotAllowedError</strong> &#8211; if called</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.Bit.__add__">
+<code class="descname">__add__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.Bit.__add__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method just calls the OR operation
+We overrode this operator to be able to write logic equations more easily</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.Bit.__and__">
+<code class="descname">__and__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.Bit.__and__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method just calls the AND operation
+We overrode this operator to be able to write logic equations more easily</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.Bit.__invert__">
+<code class="descname">__invert__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.Bit.__invert__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method just calls the NOT operation
+We overrode this operator to be able to write logic equations more easily</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.Bit.__mul__">
+<code class="descname">__mul__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.Bit.__mul__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method just calls the AND operation
+We overrode this operator to be able to write logic equations more easily</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.Bit.__neg__">
+<code class="descname">__neg__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.Bit.__neg__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method just calls the NOT operation
+We overrode this operator to be able to write logic equations more easily</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.Bit.__or__">
+<code class="descname">__or__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.Bit.__or__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method just calls the OR operation
+We overrode this operator to be able to write logic equations more easily</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.Bit.__xor__">
+<code class="descname">__xor__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.Bit.__xor__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method just calls the XOR operation
+We overrode this operator to be able to write logic equations more easily</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.Bit.debug__printAsBoolean">
+<code class="descname">debug__printAsBoolean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.Bit.debug__printAsBoolean" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is for debug purposes only, it will reveal the Boolean value in the bit</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><strong>OpNotAllowedError</strong> &#8211; if called</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="datatypes.bits.Bit.CryptoBit">
+<em class="property">class </em><code class="descclassname">datatypes.bits.Bit.</code><code class="descname">CryptoBit</code><span class="sig-paren">(</span><em>value=False</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.CryptoBit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#datatypes.bits.Bit.Bit" title="datatypes.bits.Bit.Bit"><code class="xref py py-class docutils literal"><span class="pre">datatypes.bits.Bit.Bit</span></code></a></p>
+<p>Emulated homomorphic bit, we forbid ourselves to read the bit value.
+Upon creation, the apparent value of the bit will be random.
+The plain value is stored in the __bit member.</p>
+<p>:param value:(optional) Defines the value of the bit, defaults to False
+:param verbose:(optional) Defines whether or not the bit will print a message upon refresh, defaults to False</p>
+<dl class="method">
+<dt id="datatypes.bits.Bit.CryptoBit.AND">
+<code class="descname">AND</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.CryptoBit.AND" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a logical AND operation between self and other</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<em>PlainBit or CryptoBit</em>) &#8211; RightOperand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A bit containing the result of the AND operation</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.bits.Bit.CryptoBit" title="datatypes.bits.Bit.CryptoBit">CryptoBit</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><strong>BitwiseOperationError</strong> &#8211; if the right operand is not a Bit</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.CryptoBit.NOT">
+<code class="descname">NOT</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.CryptoBit.NOT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a logical NOT operation on self</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A bit containing the result of the NOT operation</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.bits.Bit.CryptoBit" title="datatypes.bits.Bit.CryptoBit">CryptoBit</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.CryptoBit.OR">
+<code class="descname">OR</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.CryptoBit.OR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a logical OR operation between self and other</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<em>PlainBit or CryptoBit</em>) &#8211; RightOperand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A bit containing the result of the OR operation</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.bits.Bit.CryptoBit" title="datatypes.bits.Bit.CryptoBit">CryptoBit</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><strong>BitwiseOperationError</strong> &#8211; if the right operand is not a Bit</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.CryptoBit.XOR">
+<code class="descname">XOR</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.CryptoBit.XOR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a logical XOR operation between self and other</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<em>PlainBit or CryptoBit</em>) &#8211; RightOperand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A bit containing the result of the XOR operation</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.bits.Bit.CryptoBit" title="datatypes.bits.Bit.CryptoBit">CryptoBit</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><strong>BitwiseOperationError</strong> &#8211; if the right operand is not a Bit</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.CryptoBit.__eq__">
+<code class="descname">__eq__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.CryptoBit.__eq__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test if two bits are Equals, however since two Cryptobits cannot be compared directly, this function always returns an exception</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><strong>OpNotAllowedError</strong> &#8211; if other is not of type PlainBit</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.CryptoBit.__repr__">
+<code class="descname">__repr__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.CryptoBit.__repr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return representation of Crypto</p>
+<p>Note that this value is not the real value but a random value, so you should not rely on it
+:returns: 1 if bit is set to True, 0 otherwise</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.CryptoBit.debug__printAsBoolean">
+<code class="descname">debug__printAsBoolean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.CryptoBit.debug__printAsBoolean" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is for debug purposes only, it will reveal the Boolean value in the bit</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean value of bit</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.CryptoBit.decrypt">
+<code class="descname">decrypt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.CryptoBit.decrypt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decrypt the CryptoBit</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">PlainBit containing the value of the CryptoBit</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="bits.html#bits.Bit.PlainBit" title="bits.Bit.PlainBit">PlainBit</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.CryptoBit.refresh">
+<code class="descname">refresh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.CryptoBit.refresh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets the bit&#8217;s noise, if the bit&#8217;s verbose attribute is set, then it will print a message</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.CryptoBit.setNoise">
+<code class="descname">setNoise</code><span class="sig-paren">(</span><em>value=0</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.CryptoBit.setNoise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the bit&#8217;s noise, if the noise is above the threshold, then it will trigger a refresh</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>int</em>) &#8211; The value that should be set, defaults to 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="datatypes.bits.Bit.PlainBit">
+<em class="property">class </em><code class="descclassname">datatypes.bits.Bit.</code><code class="descname">PlainBit</code><span class="sig-paren">(</span><em>value=False</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.PlainBit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#datatypes.bits.Bit.Bit" title="datatypes.bits.Bit.Bit"><code class="xref py py-class docutils literal"><span class="pre">datatypes.bits.Bit.Bit</span></code></a></p>
+<p>This class represents a bit which is not encrypted
+Its goal is just to wrap a boolean and allow us to do operation with CryptoBits</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>Boolean</em>) &#8211; Defines the value of the bit, defaults to False</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="datatypes.bits.Bit.PlainBit.AND">
+<code class="descname">AND</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.PlainBit.AND" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a logical AND operation between self and other</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<em>PlainBit or CryptoBit</em>) &#8211; RightOperand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A bit containing the result of the AND operation</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">PlainBit if right operand is PlainBit, CryptoBit if right operand is CryptoBit</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><strong>BitwiseOperationError</strong> &#8211; if the right operand is not a Bit</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.PlainBit.NOT">
+<code class="descname">NOT</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.PlainBit.NOT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a logical NOT operation on self</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A bit containing the result of the NOT operation</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="bits.html#bits.Bit.PlainBit" title="bits.Bit.PlainBit">PlainBit</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.PlainBit.OR">
+<code class="descname">OR</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.PlainBit.OR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a logical OR operation between self and other</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<em>PlainBit or CryptoBit</em>) &#8211; RightOperand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A bit containing the result of the OR operation</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">PlainBit if right operand is PlainBit, CryptoBit if right operand is CryptoBit</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><strong>BitwiseOperationError</strong> &#8211; if the right operand is not a Bit</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.PlainBit.XOR">
+<code class="descname">XOR</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.PlainBit.XOR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a logical XOR operation between self and other</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<em>PlainBit or CryptoBit</em>) &#8211; RightOperand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A bit containing the result of the XOR operation</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">PlainBit if right operand is PlainBit, CryptoBit if right operand is CryptoBit</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><strong>BitwiseOperationError</strong> &#8211; if the right operand is not a Bit</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.PlainBit.__eq__">
+<code class="descname">__eq__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.PlainBit.__eq__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test if two bits are Equals</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="bits.html#bits.Bit.PlainBit" title="bits.Bit.PlainBit"><em>PlainBit</em></a>) &#8211; Bit to compare</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if bits are equal, False otherwise</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Boolean</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><strong>OpNotAllowedError</strong> &#8211; if other is not of type PlainBit</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.PlainBit.__repr__">
+<code class="descname">__repr__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.PlainBit.__repr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return representation of Plain Bit</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">1 if bit is set to True, 0 otherwise</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.PlainBit.debug__printAsBoolean">
+<code class="descname">debug__printAsBoolean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.PlainBit.debug__printAsBoolean" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is for debug purposes only, it will reveal the Boolean value in the bit</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean value of bit</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datatypes.bits.Bit.PlainBit.encrypt">
+<code class="descname">encrypt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datatypes.bits.Bit.PlainBit.encrypt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encrypts the PlainBit</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">CryptoBit containing the value of the PlainBit</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#datatypes.bits.Bit.CryptoBit" title="datatypes.bits.Bit.CryptoBit">CryptoBit</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">datatypes.bits package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-datatypes.bits.Bit">datatypes.bits.Bit module</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="datatypes.html">datatypes package</a><ul>
+      <li>Previous: <a href="datatypes.html" title="previous chapter">datatypes package</a></li>
+      <li>Next: <a href="datatypes.bits.errors.html" title="next chapter">datatypes.bits.errors package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/datatypes.bits.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Louis GERARD and Edouard SAMYN.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/datatypes.bits.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,2 @@
+class BadRightOperand(RuntimeError):
+    pass
